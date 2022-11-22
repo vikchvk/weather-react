@@ -55,13 +55,3 @@ export default function Search() {
     return form;
   }
 }
-<small class="coder">
-            <a
-              href="https://github.com/vikchvk/new-weather-app"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open-source code
-            </a>
-            by Viktoriia Chvykova
-          </small>
