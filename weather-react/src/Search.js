@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-
+import "./styles.css"
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast"
 import axios from "axios";
 
-export default function Search() {
-  const [city, setCity] = useState("");
-  const [loaded, setLoaded] = useState(false);
+export default function Search(props) {
+  const [city, setCity] = useState(props.defaultCity);
+  const [loaded, setLoaded] = useState({ready: false });
   const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
     setLoaded(true);
     setWeather({
+      ready: true,
+      city: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
